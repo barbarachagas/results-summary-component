@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap");
+$light-red: hsl(0, 100%, 67%);
+$light-red-transparent: hsla(0, 100%, 67%, 0.2);
+$orangey-yellow: hsl(39, 100%, 56%);
+$orangey-yellow-transparent: hsla(39, 100%, 56%, 0.2);
+$green-teal: hsl(166, 100%, 37%);
+$green-teal-transparent: hsla(166, 100%, 37%, 0.2);
+$cobalt-blue: hsl(234, 85%, 45%);
+$cobalt-blue-transparent: hsla(234, 85%, 45%, 0.2);
+$violet: hsla(246, 100%, 73%, 1);
+//background
+$light-slate-blue: hsl(252, 100%, 67%);
+$light-royal-blue: hsl(241, 81%, 54%);
+//circle
+$violet-blue: hsla(256, 72%, 46%, 1);
+$persian-blue: hsla(241, 72%, 46%, 0);
+// Neutral
+$white: hsl(0, 0%, 100%);
+$pale-blue: hsl(221, 100%, 96%);
+$light-lavender: hsl(241, 100%, 89%);
+$dark-gray-blue: hsl(224, 30%, 27%);
+
+// RESET
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+// END RESET
+
+body {
+  font-family: "Hanken Grotesk";
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  @media screen and (max-width: 1024px) {
+    height: auto;
+  }
+  .card {
+    width: 50%;
+    display: flex;
+    border-radius: 32px;
+    box-shadow: 0px 4px 70px 0px rgba(17, 37, 214, 0.25);
+    @media screen and (max-width: 1024px) {
+      flex-direction: column;
+      width: 100%;
+    }
+    &__result {
+      width: 50%;
+      display: flex;
+      padding: 56px;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      border-radius: 32px;
+      background: linear-gradient(180deg, #7857ff 0%, #2e2be9 100%);
+      @media screen and (max-width: 1024px) {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        width: auto;
+      }
+      &--title {
+        color: $white;
+        font-size: 25px;
+        font-weight: 600;
+        letter-spacing: -0.25px;
+      }
+      &--points {
+        display: flex;
+        padding: 40px 45px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 100px;
+        background: linear-gradient(
+          180deg,
+          #4e21ca 0%,
+          rgba(36, 33, 202, 0.2) 100%
+        );
+        &--pontuation {
+          font-size: 72px;
+          font-weight: 700;
+          color: $white;
+        }
+        &--of {
+          font-size: 18px;
+          font-weight: 700;
+          color: $violet;
+        }
+      }
+      &--message {
+        color: $white;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        &--title {
+          color: $white;
+          font-size: 32px;
+          font-weight: 700;
+        }
+      }
+    }
+    &__summary {
+      width: 50%;
+      padding: 56px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      justify-content: center;
+      @media screen and (max-width: 1024px) {
+        width: auto;
+        padding: 24px;
+        margin-bottom: 48px;
+      }
+      &--title {
+        color: $dark-gray-blue;
+        font-size: 24px;
+        font-weight: 700;
+      }
+      &--reaction,
+      &--memory,
+      &--verbal,
+      &--visual {
+        display: flex;
+        justify-content: space-between;
+        padding: 16px;
+        border-radius: 12px;
+        &--title {
+          display: flex;
+          gap: 8px;
+          align-items: center;
+        }
+        &--points {
+          color: $dark-gray-blue;
+          span {
+            opacity: 0.6;
+          }
+        }
+      }
+      &--reaction {
+        background-color: $light-red-transparent;
+        &--title {
+          color: $light-red;
+        }
+      }
+      &--memory {
+        background-color: $orangey-yellow-transparent;
+        &--title {
+          color: $orangey-yellow;
+        }
+      }
+      &--verbal {
+        background-color: $green-teal-transparent;
+        &--title {
+          color: $green-teal;
+        }
+      }
+      &--visual {
+        background-color: $cobalt-blue-transparent;
+        &--title {
+          color: $cobalt-blue;
+        }
+      }
+      &--continue {
+        display: flex;
+        border: none;
+        color: $white;
+        width: 100%;
+        padding: 16px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 24px;
+        background: linear-gradient(180deg, #4e21ca 0%, #2421ca 100%);
+        &:hover {
+          background: linear-gradient(180deg, #2421ca 100%, #4e21ca 0%);
+        }
+      }
+    }
+  }
+  .attribution {
+    font-size: 11px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: $violet-blue;
+    color: $white;
+    padding: 12px 0;
+    a {
+      color: $light-lavender;
+      &:hover {
+        color: $light-slate-blue;
+      }
+    }
+  }
+}
